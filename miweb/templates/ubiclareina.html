@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>The coronavirus web</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}" >
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+
+
+
+
+</head>
+<body class ="#00acc1 cyan darken-1">
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo right">Coronavirus</a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a href="{% url 'inicio' %}">Formulario</a></li>
+            <li><a href="{% url 'contacto' %}">Información</a></li>     
+            <li><a href="{% url 'hlascondes' %}">Las Condes</a></li>
+            <li class="active"><a href="{% url 'hvitacura' %}">Vitacura</a></li>      
+            <li><a href="{% url 'hbarnechea' %}">Lo Barnechea</a></li>
+            <li><a href="{% url 'hprovidencia' %}">Providencia</a></li>
+            <li><a href="{% url 'hlareina' %}">La Reina</a></li>
+          </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h1 style="text-align: center;">Centros médicos en La Reina</h1>
+            </div>
+            <div class="col s12">
+            <h4 style="text-align: center;">Ubicación de los {{numcompetidores}} centros médicos de La Reina</h4>
+            </div>
+            <div class="col s12 offset-s4">
+            <h6 style="text-align: center;">
+                <ul>
+                    <table>
+                        <thead>
+                          <tr>
+                              <th>Número</th>
+                              <th>Ubicación Centro Médico</th>
+                          </tr>
+                        </thead>
+                        <tbody>                          
+                          {% for i in Place%}
+                          <tr>
+                            <td>{{forloop.counter}}</td> 
+                            <td>{{i}}</td>                         
+                          </tr>                         
+                          {%endfor%}                        
+                        </tbody>
+                      </table>
+                </ul>
+            </h6>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

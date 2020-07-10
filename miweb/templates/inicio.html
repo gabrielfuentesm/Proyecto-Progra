@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <title>The coronavirus web</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}" >
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+    <script>
+        $(document).ready(function(){
+            $('.tabs').tabs();
+        });
+    </script>
+</head>
+<body class="#00acc1 cyan darken-1">
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo right">Coronavirus</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li class="active"><a href="{% url 'inicio' %}">Formulario</a></li>
+            <li><a href="{% url 'contacto' %}">Información</a></li>
+            <li><a href="{% url 'hlascondes' %}">Las Condes</a></li>
+            <li><a href="{% url 'hvitacura' %}">Vitacura</a></li>
+            <li><a href="{% url 'hbarnechea' %}">Lo Barnechea</a></li>
+            <li><a href="{% url 'hprovidencia' %}">Providencia</a></li>
+            <li><a href="{% url 'hlareina' %}">La Reina</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        
+        <form action ="{% url 'inicio2' %}" method ="POST">
+            <h4>Ingrese sus síntomas</h4>
+            <!--<label for="nombre"> Ingrese su nombre y su correo electrónico: </label>-->
+            <input type="number" placeholder="Escribe tu edad" name="edad" id="edad"> 
+            <input type="text" placeholder="¿Tienes fiebre?" name="fiebre" id="fiebre"> 
+            <input type="text" placeholder="¿Tienes tos seca?" name="tos" id="tos"> 
+            <input type="text" placeholder="¿Has tenido algún cansacio inusual?" name="cansancio" id="cansancio"> 
+            <input type="text" placeholder="¿Has sentido molestias/dolor en el pecho?" name="pecho" id="pecho">  
+            <input type="text" placeholder="¿Has sentido dolor de cabeza?" name="cabeza" id="cabeza"> 
+            <input type="text" placeholder="¿Has tenido dificultades para respirar?" name="respirar" id="respirar">
+            <h0><label for="nombre"> ¿Tienes fiebre? </label></h0>
+            <form action="#">
+                <p>
+                  <label>
+                    <input name="group1" type="radio" checked />
+                    <span>Sí</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input name="group1" type="radio" />
+                    <span>No</span>
+                  </label>
+                </p>
+            </form> 
+
+            
+            <br><br>
+            <label for="sexo">Seleccione su sexo</label>
+            <br><br>
+            <select class="browser-default">
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
+                <option value="otro">Otro</option>
+            </select>
+            <br><br>
+            <h6>Ingrese su comuna</h6>
+            <select class="browser-default">
+                <option value="Vitacura">Vitacura</option>
+                <option value="La Reina">La Reina</option>
+                <option value="Providencia">Providencia</option>
+                <option value="Las Condes">Las Condes</option>
+                <option value="Santiago Centro">Lo Barnechea</option>
+            </select>
+            <br><br> 
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+    </div>
+</body>
+
+
+
+</html>
+

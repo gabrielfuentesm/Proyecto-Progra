@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <title>The coronavirus web</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}" >
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+    <script>
+        $(document).ready(function(){
+            $('.tabs').tabs();
+        });
+    </script>
+</head>
+<body class="#00acc1 cyan darken-1">
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo right">Coronavirus</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li class="active"><a href="{% url 'inicio' %}">Formulario</a></li>
+            <li><a href="{% url 'contacto' %}">Información</a></li>
+            <li><a href="{% url 'hlascondes' %}">Las Condes</a></li>
+            <li><a href="{% url 'hvitacura' %}">Vitacura</a></li>
+            <li><a href="{% url 'hbarnechea' %}">Lo Barnechea</a></li>
+            </ul>
+        </div>
+    </nav>
+    <form id="form1" action="{% url 'inicio' %}" method="POST">
+        {% csrf_token %}
+        <div class="row" style="margin-bottom: 0px;">
+            <div class="input-field col 10 offset-s1">
+                <input type="number" placeholder="Escribe tu edad" name="edad" id="edad">
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 0px;">
+            <div class="input-field col 10 offset-s1">
+                <input type="text" placeholder="¿Tienes fiebre?" name="fiebre" id="fiebre"> 
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 0px;">
+            <div class="input-field col 10 offset-s1">
+                <input type="text" placeholder="¿Tienes tos seca?" name="tos" id="tos">
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 0px;"> 
+            <div class="input-field col 10 offset-s1">
+                <input type="text" placeholder="¿Has tenido algún cansacio inusual?" name="cansancio" id="cansancio"> 
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 0px;">
+            <div class="input-field col 10 offset-s1">
+                <input type="text" placeholder="¿Has sentido molestias/dolor en el pecho?" name="pecho" id="pecho"> 
+            </div> 
+        </div>
+        <div class="row" style="margin-bottom: 0px;">
+            <div class="input-field col 10 offset-s1">
+                <input type="text" placeholder="¿Has sentido dolor de cabeza?" name="cabeza" id="cabeza"> 
+            </div>
+        <div class="row" style="margin-bottom: 0px;">
+            <div class="col 12 offset-s1">
+                <input type="text" placeholder="¿Has tenido dificultades para respirar?" name="respirar" id="respirar">
+            </div>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+</body>
