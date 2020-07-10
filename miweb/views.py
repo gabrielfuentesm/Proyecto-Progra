@@ -2,6 +2,9 @@ from django.shortcuts import render, HttpResponse
 from .models import Vitacura
 
 def inicio(request):
+    return render(request, "inicio.html")
+
+def inicio2(request):
     if request.method == 'POST':
         edad = request.POST.get('edad', '')
         fiebre = request.POST.get('fiebre', '')
@@ -11,12 +14,10 @@ def inicio(request):
         cabeza = request.POST.get('cabeza', '')
         respirar = request.POST.get('respirar', '')
         enfermedad = request.POST.get('enfermedad', '')
-        return render(request, "inicio.html")
+        return render(request, "inicio2.html")
     else:
-        return render(request, "inicio.html")
+        return render(request, "inicio2.html")
 
-def inicio2(request):
-    return render(request, "inicio2.html")
 
 
 def contacto(request):
@@ -47,7 +48,7 @@ def ubic_vitacura(request):
     return render(request, "ubicvitacura.html", context)
 
 def lobarnechea(request):
-    lo_barnechea = ["SAPU Lo Barnechea", "Centro Comunitario de Salud Familiar Bicentenario", "Centro Comunitario de Salud Familiar Bicentenario", "Centro de Salud Familiar Lo Barnechea", "Clínica Alemana de La Dehesa", "Centro Médico Clínica Santa María La Dehesa"]
+    lo_barnechea = ["SAPU Lo Barnechea", "Centro Comunitario de Salud Familiar Bicentenario(Sur)", "Centro Comunitario de Salud Familiar Bicentenario(Norte)", "Centro de Salud Familiar Lo Barnechea", "Clínica Alemana de La Dehesa", "Centro Médico Clínica Santa María La Dehesa"]
     context = {"Place": lo_barnechea, "numcompetidores": len(lo_barnechea)}
     return render(request, "hbarnechea.html", context)
 
@@ -77,14 +78,6 @@ def ubic_lareina(request):
     ubic = ["Avenida José Arrieta 6024", "Calle Julia Berstein 1240", "Avenida Larraín 5862", "Avenida Principe de Gales 6938", "Avenida Francisco Bilbao 6387", "Calle Echenique 8419", "Calle Parinacota 440", "Avenida Jorge 50", "Avenida Larraín 9100", "Calle Quillahua 480", "Calle Dragones de La Reina 616", "Avenida Ossa 345", "Calle Cordillera 25", "Calle Echenique 8419"]
     context = {"Place": ubic, "numcompetidores": len(ubic)}
     return render(request, "ubiclareina.html", context)
-
-
-def formulario2(request):
-    return render(request, "formulario2.html")
-
-def respuesta(request):
-    #context = 
-    return render(request,"respform.html")
 
 
 

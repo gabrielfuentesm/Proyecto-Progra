@@ -14,12 +14,12 @@
         });
     </script>
 </head>
-<body class="#00acc1 cyan darken-1">
+<body class="#c5cae9 indigo lighten-4">
     <nav>
-        <div class="nav-wrapper">
+        <div style="background-color: #00f7ff8c;" class="nav-wrapper">
             <a href="#" class="brand-logo right">Coronavirus</a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li class="active"><a href="{% url 'inicio' %}">Formulario</a></li>
+            <li class="active"><a href="{% url 'inicio' %}">Inicio</a></li>
             <li><a href="{% url 'contacto' %}">Información</a></li>
             <li><a href="{% url 'hlascondes' %}">Las Condes</a></li>
             <li><a href="{% url 'hvitacura' %}">Vitacura</a></li>
@@ -29,61 +29,89 @@
             </ul>
         </div>
     </nav>
+    <div class="container">        
+      <h1 class="center-align">Bienvenido a GPSP</h1>
+      <p class="center-align" style="text-align: justify;">En este sitio web se puede encontrar información, datos del gobierno de Chile y datos mundiales sobre el coronavirus (COVID-19), que se presentó por primera vez en Wuhan (China) el 31 de diciembre de 2019. Esta página tiene información actualizada diariamente, la cual te ayudará a conocer más sobre la evolución de este virus a nivel nacional y mundial. También te brindaremos información si necesitas acudir a un centro médico, según tu estado de salud. Sugiriéndote la ubicación de los hospitales en tu zona. Si bien por estos momentos solo estamos atendiendo con información de ciertas comunas, próximamente ampliaremos nuestro rango para poder ayudar a más gente dentro del país.</p>
+      <h4 class="center-align">Pero... ¿Qué es el Covid-19?</h4>
+      <p class="center-align" style="text-align: justify;">Es una enfermedad infecciosa causada por el virus SARS-CoV-2. Produce síntomas similares a los de la gripe, entre los que se incluyen fiebre, tos seca,  disnea (sensación de falta de aire), mialgia (dolor muscular) y fatiga. En casos graves se caracteriza por producir neumonía, síndrome de dificultad respiratoria aguda, sepsis y choque séptico que conduce a cerca de 3,75 % de los infectados a la muerte según la OMS. No existe tratamiento específico hasta el momento; las medidas terapéuticas principales consisten en aliviar los síntomas y mantener las funciones vitales. Los síntomas aparecen entre dos y catorce días, con un promedio de cinco días, después de la exposición al virus.</p>
+    </div> 
+    <br>
     <div class="container">
-        
-        <form action ="{% url 'inicio2' %}" method ="POST">
-            <h4>Ingrese sus síntomas</h4>
-            <!--<label for="nombre"> Ingrese su nombre y su correo electrónico: </label>-->
-            <input type="number" placeholder="Escribe tu edad" name="edad" id="edad"> 
-            <input type="text" placeholder="¿Tienes fiebre?" name="fiebre" id="fiebre"> 
-            <input type="text" placeholder="¿Tienes tos seca?" name="tos" id="tos"> 
-            <input type="text" placeholder="¿Has tenido algún cansacio inusual?" name="cansancio" id="cansancio"> 
-            <input type="text" placeholder="¿Has sentido molestias/dolor en el pecho?" name="pecho" id="pecho">  
-            <input type="text" placeholder="¿Has sentido dolor de cabeza?" name="cabeza" id="cabeza"> 
-            <input type="text" placeholder="¿Has tenido dificultades para respirar?" name="respirar" id="respirar">
-            <h0><label for="nombre"> ¿Tienes fiebre? </label></h0>
-            <form action="#">
-                <p>
-                  <label>
-                    <input name="group1" type="radio" checked />
-                    <span>Sí</span>
-                  </label>
-                </p>
-                <p>
-                  <label>
-                    <input name="group1" type="radio" />
-                    <span>No</span>
-                  </label>
-                </p>
-            </form> 
+      <div class="row">
+          <div class="col s12 m12">
+              <div class="card cyan lighten-4">
+                  <div class="card-content">
+                      <span class="card-title"></span>
+                      <p>Datos coronavirus en Chile (10/07/20).</p>
+                  </div>
+                  <div class="card-tabs">
+                      <ul class="tabs tabs-fixed-width">
+                      <li class="tab"><a style="color: #0a0b0c;" class="active" href="#tab1">Personas de riesgo</a></li>
+                      <li class="tab"><a style="color: #0a0b0c;" href="#tab2">Sintomas Leves</a></li>
+                      <li class="tab"><a style="color: #0a0b0c;" href="#tab3">Sintomas Graves</a></li>
+                      <li class="tab"><a style="color: #0a0b0c;" href="#tab4">Enfermedades Desfavorables</a></li>
+                      </ul>
+                  </div>
+                  <div class="card-content grey lighten-4">
+                      <div id="tab1">
+                          1) Mayores de 60.
+                          <br>
+                          2) Enfermos cronicos o inmunodeprimidos.
+                          <br>
+                          3) Resultado positivo en el test PCR del COVID-19. 
+                      </div>
+                      <div id="tab2">
+                        1) Fiebre.
+                        <br>
+                        2) Tos seca.
+                        <br>
+                        3) dolor de cabeza.
+                        <br>
+                        4) Dolor de garganta.
+                        <br>
+                        5) Dolor torácico. 
+                        <br>
+                        6) Dolor muscular.
+                        <br>
+                        7) Pérdida de olfato y/o gusto. 
+                      </div>
+                      <div id="tab3">1) Difficultad respiratoria.</div>
+                      <div id="tab4">1) Diábetes.<br>
+                        2) Hipertensión.<br>
+                        3) Efermedad renal.<br>
+                        4) Obesidad.<br>
+                        5) Enfermedades cardiacas.<br>
+                        6) Fibrosis quística.<br>
+                        7) Asma.<br>
+                        8) Embarazo.<br> 
+                        9) Fibrosis pulmonar.<br>
+                        10) EPOC.<br>
 
-            
-            <br><br>
-            <label for="sexo">Seleccione su sexo</label>
-            <br><br>
-            <select class="browser-default">
-                <option value="hombre">Hombre</option>
-                <option value="mujer">Mujer</option>
-                <option value="otro">Otro</option>
-            </select>
-            <br><br>
-            <h6>Ingrese su comuna</h6>
-            <select class="browser-default">
-                <option value="Vitacura">Vitacura</option>
-                <option value="La Reina">La Reina</option>
-                <option value="Providencia">Providencia</option>
-                <option value="Las Condes">Las Condes</option>
-                <option value="Santiago Centro">Lo Barnechea</option>
-            </select>
-            <br><br> 
-            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                <i class="material-icons right">send</i>
-            </button>
-        </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>  
+    <br>
+    <div class="container">
+      <h4>Sugerencias:</h4>
+      <p class="center-align" style="text-align: justify;">1) Le recomendamos ir al hospital <b>si presenta síntomas graves.</b><br> 2) <b>Si es parte de las personas de riesgo y/o presenta enfermedades desfavorables.</b> Le recomendamos cuidarse, tomar las debidas precauciones y ante cualquier empeoramiento grave de salud, dirigirse a un centro médico. <br>
+        3) <b>Si presenta síntomas leves.</b> le recomendamos mantenerse en casa, cuidarse y frente a cualquier empeoramiento de su salud, acuda a un centro médico.</p>
     </div>
+    <br>      
+    <div class="container">
+      <h4>Aqui puede encontrar los centros medicos de Stgo Oriente:</h4><br><br>
+      <a href="{% url 'hlascondes' %}" class="waves-effect waves-light btn">Las Condes</a>
+      <a href="{% url 'hlareina' %}" class="waves-effect waves-light btn">La Reina</a>
+      <a href="{% url 'hbarnechea' %}" class="waves-effect waves-light btn">Lo Barnechea</a>
+      <a href="{% url 'hprovidencia' %}" class="waves-effect waves-light btn">Providencia</a>
+      <a href="{% url 'hvitacura' %}" class="waves-effect waves-light btn">Vitacura</a>
+    </div>
+    <br><br>
 </body>
-
-
-
 </html>
 
+<!---- <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+            </button>-->
